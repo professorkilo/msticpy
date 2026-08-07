@@ -355,8 +355,9 @@ def init_notebook(
     https://github.com/Azure/Azure-Sentinel-Notebooks/blob/master/ConfiguringNotebookEnvironment.ipynb
 
     """
-    if namespace is None and get_ipython():
-        namespace = get_ipython().user_global_ns
+    shell = get_ipython()
+    if namespace is None and shell is not None:
+        namespace = shell.user_global_ns
     else:
         namespace = namespace if (namespace is not None) else {}
     check_kwargs(
