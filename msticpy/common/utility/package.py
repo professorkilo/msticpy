@@ -157,7 +157,7 @@ def check_and_install_missing_packages(
     pkg_success = True
     for package in pkgbar:
         shell = get_ipython()
-        if shell:
+        if shell is not None:
             shell.run_line_magic("pip", " ".join(pkg_command + [package]))
         else:
             try:

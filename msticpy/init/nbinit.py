@@ -356,7 +356,7 @@ def init_notebook(
 
     """
     shell = get_ipython()
-    if namespace is None and shell:
+    if namespace is None and shell is not None:
         namespace = shell.user_global_ns
     else:
         namespace = namespace if (namespace is not None) else {}
