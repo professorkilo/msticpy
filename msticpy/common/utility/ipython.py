@@ -153,11 +153,8 @@ def is_ipython(notebook: bool = False) -> bool:
         otherwise False
 
     """
-    return (
-        get_ipython() and type(get_ipython()).__name__.startswith("ZMQ")
-        if notebook
-        else bool(get_ipython())
-    )
+    shell = get_ipython()
+    return type(shell).__name__.startswith("ZMQ") if notebook and shell else bool(shell)
 
 
 _CODE_CELL_TEMPLATE = """#########################################
@@ -212,4 +209,5 @@ def save_obj_to_cell(obj: Any, var_name: str):
     )
     shell = get_ipython()
     # create a new cell using `cell_code` as the code contents.
-    shell.set_next_input(cell_text)
+    if shell:
+        shell.set_next_input(cell_text)
