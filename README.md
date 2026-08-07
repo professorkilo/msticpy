@@ -4,6 +4,13 @@
 [![Azure Pipelines build](https://dev.azure.com/mstic-detections/mstic-jupyter/_apis/build/status/microsoft.msticpy?branchName=main)](https://dev.azure.com/mstic-detections/mstic-jupyter/_build/latest?definitionId=14&branchName=main)
 [![Downloads](https://pepy.tech/badge/msticpy)](https://pepy.tech/project/msticpy)
 
+
+---
+**Due to increased security controls as a result of recent supply chain attacks, we are temporarily
+unable to publish updates to PyPI. We are working to resolve this issue, as it is causing a backlog of,
+among other things, security-related fixes. My sincere apologies for the interruption of service.**
+---
+
 Microsoft Threat Intelligence Python Security Tools.
 
 **msticpy** is a library for InfoSec investigation and hunting
