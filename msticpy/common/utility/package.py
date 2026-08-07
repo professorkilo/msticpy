@@ -156,8 +156,9 @@ def check_and_install_missing_packages(
         pkg_command.append("--upgrade")
     pkg_success = True
     for package in pkgbar:
-        if is_ipython():
-            get_ipython().run_line_magic("pip", " ".join(pkg_command + [package]))
+        shell = get_ipython()
+        if shell is not None:
+            shell.run_line_magic("pip", " ".join(pkg_command + [package]))
         else:
             try:
                 subprocess.run(  # nosec
