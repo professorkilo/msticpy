@@ -6,9 +6,21 @@
 
 
 ---
-**Due to increased security controls as a result of recent supply chain attacks, we are temporarily
+### Temporary halt on PyPI publishing
+
+Due to increased security controls as a result of recent supply chain attacks, we are temporarily
 unable to publish updates to PyPI. We are working to resolve this issue, as it is causing a backlog of,
-among other things, security-related fixes. My sincere apologies for the interruption of service.**
+among other things, security-related fixes. My sincere apologies for the interruption of service.
+
+Until we get this moving again, we'll continue to update the GitHub repo and you can install directly
+from here:
+```bash
+python -m pip install --upgrade --force-reinstall git+https://github.com/microsoft/msticpy.git
+```
+or
+```bash
+uv pip install git+https://github.com/microsoft/msticpy.git
+```
 ---
 
 Microsoft Threat Intelligence Python Security Tools.
