@@ -39,8 +39,8 @@ class SecurityGraphDriver(OData):
         """
         super().__init__(**kwargs)
         az_cloud_config = AzureCloudConfig(cloud=kwargs.pop("cloud", None))
-        self.scopes = ["User.Read"]
         self.api_root = az_cloud_config.endpoints.get("microsoftGraphResourceId")
+        self.scopes = [f"{self.api_root}.default"]
         self.req_body = {
             "client_id": None,
             "client_secret": None,  # nosec
